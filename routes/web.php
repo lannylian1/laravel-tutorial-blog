@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('about', function () {
-    return view('about');
+Route::get('categories/create', function () {
+    return view('create');
 });
 
 Route::get('/', function () {
@@ -33,3 +33,4 @@ Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 /*
 Routes::get('/companies', 'App\Http\Controllers\CompanyController@index');
 */ 
+Route::resource('/categories','App\Http\Controllers\CategoryController');
