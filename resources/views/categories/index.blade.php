@@ -14,7 +14,7 @@
                     <h1 class="pull-right"><a href='/categories/create' class='btn btn-info' role='button'>+ Add New Category</a></h1>
                     <table class="table">
                         <thead>
-                            <th>#</td>
+                            <th>#</th>
                             <th>Category</th>
                             <th></th>
                         </thead>

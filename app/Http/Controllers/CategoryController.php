@@ -95,7 +95,7 @@ class CategoryController extends Controller
         $rules = [
             'category' => 'required|max:50|unique:categories,category,'.$id
         ];
-        $this->validate($request, $rules);
+        $validator = $this->validate($request, $rules);
         $category = \App\Models\Category::find($id);
 
         if ($category != null) {

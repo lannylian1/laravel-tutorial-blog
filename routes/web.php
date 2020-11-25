@@ -34,3 +34,4 @@ Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 Routes::get('/companies', 'App\Http\Controllers\CompanyController@index');
 */ 
 Route::resource('/categories','App\Http\Controllers\CategoryController');
+Route::resource('/items','App\Http\Controllers\ItemsController');
