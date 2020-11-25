@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Session;
+use Image;
 
 class ItemsController extends Controller
 {
@@ -61,6 +62,14 @@ class ItemsController extends Controller
         $items->price = $request->price;
         $items->quantity = $request->quantity;
         $items->sku = $request->sku;
+        //save image
+        if ($request->hasFile('featured_image')) {
+            $image = $request->file('featured_image');
+            $filename = time() . '.'. $image->getClientOriginalExtension();
+            $location = public_path('images/'. $filename);
+            Image::make($image)->resize(800,400)->save($location);
+            $items->image = $filename;
+        }
         $items->save();
 
         Session::flash('success', 'A new item has been added to the database');
@@ -126,6 +135,14 @@ class ItemsController extends Controller
             $item->price = $request->price;
             $item->quantity = $request->quantity;
             $item->sku = $request->sku;
+            //image
+            if ($request->hasFile('featured_image')) {
+                $image = $request->file('featured_image');
+                $filename = time() . '.'. $image->getClientOriginalExtension();
+                $location = public_path('images/'. $filename);
+                Image::make($image)->resize(800,400)->save($location);
+                $item->image = $filename;
+            }
             $item->save();
             Session::flash('success', 'Item has been updated! ');
             

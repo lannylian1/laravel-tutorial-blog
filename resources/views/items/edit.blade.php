@@ -8,7 +8,7 @@
                 <div class="card-header">Edit Item</div>
 
                 <div class="card-body">
-                    {!! Form::model($itemForm, ['route'=> ['items.update', $itemForm->id], 'method'=> 'PUT']) !!}
+                    {!! Form::model($itemForm, ['route'=> ['items.update', $itemForm->id], 'method'=> 'PUT','files'=>true]) !!}
                     
                         {{Form::label('category_id', 'Category ID:')}}
                         {{Form::text('category_id', null, ['class'=>'form-control', 'style'=>'', 'id'=>'category_id' ]) }}
@@ -27,6 +27,9 @@
 
                         {{Form::label('sku', 'SKU:')}}
                         {{Form::text('sku', null, ['class'=>'form-control', 'style'=>'', 'id'=>'sku' ]) }}
+
+                        {{Form::label('featured_image', 'Upload Image:')}}
+                        {{Form::file('featured_image')}}
 
                         {{Form::submit('Save', ['class'=>'btn btn-primary btn-lg btn-block', 'style'=>'margin-top:20px'])}}
                     {!!Form::close()!!}

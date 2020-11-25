@@ -21,6 +21,7 @@
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>SKU</th>
+                            <th>Image</th>
                             <th></th>
                         </thead>
                         <tbody>
@@ -33,6 +34,7 @@
                                     <td>{{$item->price}}</td>
                                     <td>{{$item->quantity}}</td>
                                     <td>{{$item->sku}}</td>
+                                    <td>{{$item->image}}</td>
                                     <td>
                                         <div style="float:left"><a href="{{route('items.edit',$item->id)}}" class='btn btn-success btn-sm'>Edit</a></div>
                                         <div style="float:left">
